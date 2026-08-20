@@ -10,7 +10,8 @@
       var c = document.getElementById("lc");
       if (!c) return;
       var f = document.createElementNS("http://www.w3.org/1999/xhtml", "iframe");
-      f.setAttribute("src", "./arsenic.html");
+      // Forward ?embed= (and anything else) to the app.
+      f.setAttribute("src", "./arsenic.html" + (location.search || ""));
       f.style.cssText = "width:100%;height:100%;border:none;background:white;margin:0;padding:0;";
       c.appendChild(f);
     }
