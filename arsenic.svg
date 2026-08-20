@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Launcher for the single-file build: opening this URL (it looks like an
+  image) iframe-loads the real app without the address bar ever changing.
+  Keep it next to arsenic.html.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="position:absolute;top:0;left:0;overflow:hidden;" onload="launch()">
+  <script type="text/javascript"><![CDATA[
+    function launch() {
+      var c = document.getElementById("lc");
+      if (!c) return;
+      var f = document.createElementNS("http://www.w3.org/1999/xhtml", "iframe");
+      f.setAttribute("src", "./arsenic.html");
+      f.style.cssText = "width:100%;height:100%;border:none;background:white;margin:0;padding:0;";
+      c.appendChild(f);
+    }
+  ]]></script>
+  <foreignObject x="0" y="0" width="100%" height="100%">
+    <xhtml:div xmlns:xhtml="http://www.w3.org/1999/xhtml" id="lc" style="width:100%;height:100%;margin:0;padding:0;overflow:hidden;background:white;"></xhtml:div>
+  </foreignObject>
+</svg>
